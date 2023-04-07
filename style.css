@@ -21,6 +21,10 @@
   --fc-card: hsl(232, 17%, 35%);
 }
 
+body{
+  background: #EFF1FF;
+}
+
 img{
   width: 100%;
   height: auto;
@@ -61,7 +65,7 @@ main{
   gap: 3.2rem;
   max-width: 38rem;
   text-align: center;
-  margin: 1.4rem auto 6rem;
+  margin: 2rem auto 6rem;
 
   padding: 0 3.2rem;
 }
@@ -113,7 +117,14 @@ main p{
   object-fit: cover;
   border-radius: 2rem;
 
+  transition: all 300ms;
+
   animation: downtop 700ms 100ms backwards;
+}
+
+.card img:hover{
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 main div:nth-child(2) img, main div:nth-child(4) img{
