@@ -1,0 +1,149 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --color-header: hsl(218, 17%, 62%);
+  --color-header2:hsl(275, 18%, 79%);
+
+  font-size: 62.5%;
+  --fs-sm: 1.4rem;
+  --fs-heading: 4rem;
+  --fs-heading-sm: 2rem;
+
+  --ff-title: 'Staatliches';
+  --ff-p: 'Palanquin';
+
+  --fc-top: white;
+  --fc-body: hsl(274, 84%, 12%);
+  --fc-card: hsl(232, 17%, 35%);
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+
+header{
+  background: var(--color-header);
+  margin: 0 auto;
+  text-align: center;
+  /* width: 100vw; */
+  padding-bottom: 2.9rem;
+}
+
+header img{
+  margin: 3.2rem 0;
+  max-width: 13.7rem;
+}
+
+header h1{
+  font-family: var(--ff-title);
+  background-color: var(--color-header2);
+  font-weight: 400;
+  font-size: var(--fs-heading);
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: var(--fc-top);
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+  padding: 8px 0;
+}
+
+main{
+  display: grid;
+  gap: 3.2rem;
+  max-width: 38rem;
+  text-align: center;
+  margin: 1.4rem auto 6rem;
+
+  padding: 0 3.2rem;
+}
+
+main p{
+  font-family: var(--ff-p);
+  font-weight: 400;
+  font-size: var(--fs-sm);
+  line-height: 2rem;
+  
+  color: var(--fc-body);
+  
+  margin-bottom: 3.2rem;
+}
+
+.card-wrapper{
+  display: grid;
+  /* gap: 3.2rem; */
+}
+
+.card{
+  position: relative;
+}
+
+.card h2{
+  font-family: var(--ff-title);
+  font-size: var(--fs-heading-sm);
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  color: var(--fc-card);
+
+  background: #FEEAFA;
+  border-radius: 2rem;
+  padding: 0 2.3rem;
+  width: fit-content;
+
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  display: inline-flex;
+  align-items: center;
+
+  animation: topdown 700ms 200ms backwards;
+}
+
+.card img{
+  object-fit: cover;
+  border-radius: 2rem;
+
+  animation: downtop 700ms 100ms backwards;
+}
+
+main div:nth-child(2) img, main div:nth-child(4) img{
+  height: 25rem;
+}
+
+ main div:nth-child(3) img, main div:nth-child(5) img{
+  height: 45rem;
+}
+
+@keyframes downtop {
+  0%{
+   
+    transform: translateY(15px);
+  }
+
+  100%{
+   
+    transform: translateY(0);
+  }
+}
+
+@keyframes topdown {
+  0%{
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
