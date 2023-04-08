@@ -23,6 +23,7 @@
 
 body{
   background: #EFF1FF;
+  min-width: 38.4rem;
 }
 
 img{
@@ -33,9 +34,7 @@ img{
 
 header{
   background: var(--color-header);
-  margin: 0 auto;
   text-align: center;
-  /* width: 100vw; */
   padding-bottom: 2.9rem;
 }
 
@@ -61,8 +60,6 @@ header h1{
 }
 
 main{
-  display: grid;
-  gap: 3.2rem;
   max-width: 38rem;
   text-align: center;
   margin: 2rem auto 6rem;
@@ -70,7 +67,7 @@ main{
   padding: 0 3.2rem;
 }
 
-main p{
+main p, header p{
   font-family: var(--ff-p);
   font-weight: 400;
   font-size: var(--fs-sm);
@@ -81,9 +78,9 @@ main p{
   margin-bottom: 3.2rem;
 }
 
-.card-wrapper{
+.cards{
   display: grid;
-  /* gap: 3.2rem; */
+  gap: 3.2rem;
 }
 
 .card{
@@ -127,12 +124,28 @@ main p{
   opacity: 0.8;
 }
 
-main div:nth-child(2) img, main div:nth-child(4) img{
+main .cards div:nth-child(1) img, main .cards div:nth-child(3) img,
+main .cards div:nth-child(5) img{
   height: 25rem;
 }
 
- main div:nth-child(3) img, main div:nth-child(5) img{
+ main .cards div:nth-child(2) img, main .cards div:nth-child(4) img,
+ main .cards div:nth-child(6) img{
   height: 45rem;
+}
+
+footer{
+  font-family: 'Open Sans';
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  text-align: center;
+  color: var(--fc-card);
+  padding: 5rem 0;
+}
+
+footer a{
+  text-decoration: none;
+  color: var(--fc-card);
 }
 
 @keyframes downtop {
@@ -157,4 +170,106 @@ main div:nth-child(2) img, main div:nth-child(4) img{
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (max-width: 700px) {
+  footer{
+    display: none;
+  }
+
+  #logo2{
+    display: none;
+  }
+
+  header p{
+    display: none;
+  }
+}
+
+@media (min-width: 700px) {
+  #logo1{
+    display: none;
+  }
+
+  main p{
+    display: none;
+  }
+
+  body{
+    max-width: 158rem;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-areas:
+    'header content'
+    'header footer';
+  }
+
+  header{
+    width: 37.7rem;
+    height: 100%;
+    padding: 0;
+
+    grid-area: header;
+  }
+
+  header p{
+    color: white;
+
+    width: 25.7rem;
+    margin: 5rem auto;
+
+    line-height: 1.5;
+    font-size: 1.5rem;
+
+    grid-area: sidebar;
+  }
+
+  main{
+    max-width: 92.4rem;
+    grid-area: content;
+
+    margin: 6.4rem 9.8rem 5rem;
+    padding: 0;
+  }
+
+  footer{
+    grid-area: footer;
+  }
+
+  .cards{
+    grid-template-areas:
+    "A B C"
+    "D B F"
+    "D E F";
+  }
+
+  .cards .card h2{
+    display: none;
+  }
+
+  .cards div:nth-child(1){
+    grid-area: A;
+  }
+
+  .cards div:nth-child(2){
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3){
+    grid-area: C;
+  }
+
+  .cards div:nth-child(4){
+    grid-area: D;
+  }
+
+  .cards div:nth-child(5){
+    grid-area: E;
+  }
+
+  .cards div:nth-child(6){
+    grid-area: F;
+  }
+  
 }
